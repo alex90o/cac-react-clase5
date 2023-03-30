@@ -101,3 +101,64 @@ let inputArrayFiltered = inputArray.filter( element => element=="Username");
 inputArrayFiltered.forEach(function (element) {
     RenderInput(element);
 });
+
+class Button {
+    constructor(parentID, text) {
+        this.parentID = parentID;
+        // completa this.text
+        this.text = text;
+    }
+
+    render(){
+        let myApp = document.getElementById(this.parentID);
+    const myButtonHTML = myApp.innerHTML + "<button> " + this.text + "</button>"
+    myApp.innerHTML = myButtonHTML;
+
+    }
+    
+
+}
+//mi js anterior
+// Construir el objeto boton
+// y llamar al metodo render de ese objeto.
+let myButon = new Button("app", "Button Creado...");
+myButon.render();
+
+
+
+
+
+class Input {
+   constructor(parentID, type) {
+         this.parentID = parentID;
+    
+     this.type = type;
+    }
+
+    render() {
+       let myApp = document.getElementById(this.parentID);
+
+       const myInputHTML = myApp.innerHTML + "<input type="+ this.type + ">";
+
+     myApp.innerHTML = myInputHTML; 
+       
+   }   
+ }
+
+let myInput = new Input("inputs1", "checkbox");
+ myInput.render();
+
+let myInput2 = new Input("inputs2", "date");
+myInput2.render();
+
+let myInput3 = new Input("inputs3", "password");
+ myInput3.render();
+
+ let myInput4 = new Input("inputs4", "text");
+ myInput4.render();
+
+ let myInput5 = new Input("inputs5", "range");
+ myInput5.render();
+
+ let myInput6 = new Input("inputs6", "color");
+ myInput6.render();

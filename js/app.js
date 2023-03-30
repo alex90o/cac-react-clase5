@@ -1,4 +1,4 @@
-class Button {
+/*class Button {
     constructor(parentID, text) {
         this.parentID = parentID;
         this.text = text;
@@ -101,7 +101,8 @@ let inputArrayFiltered = inputArray.filter( element => element=="Username");
 inputArrayFiltered.forEach(function (element) {
     RenderInput(element);
 });
-
+*/
+//mi js anterior
 class Button {
     constructor(parentID, text) {
         this.parentID = parentID;
@@ -110,7 +111,7 @@ class Button {
     }
 
     render(){
-        let myApp = document.getElementById(this.parentID);
+    let myApp = document.getElementById(this.parentID);
     const myButtonHTML = myApp.innerHTML + "<button> " + this.text + "</button>"
     myApp.innerHTML = myButtonHTML;
 
@@ -118,12 +119,11 @@ class Button {
     
 
 }
-//mi js anterior
+
 // Construir el objeto boton
 // y llamar al metodo render de ese objeto.
 let myButon = new Button("app", "Button Creado...");
 myButon.render();
-
 
 
 
@@ -162,3 +162,29 @@ let myInput3 = new Input("inputs3", "password");
 
  let myInput6 = new Input("inputs6", "color");
  myInput6.render();
+
+ class Select {
+    constructor(parentID) {
+        this.parentID = parentID;
+        // completa this.text
+    }
+
+    render(){
+    let myApp = document.getElementById(this.parentID);
+    const mySelectHtml = myApp.innerHTML +  "<select name="+"select>"+
+    "<option value="+"disnable"+ "selected>Selecione un opción</option>"+
+    "<option value="+"checkbox"+">checkbox</option>"+
+    "<option value="+"date"+">date</option>"+
+    "<option value="+"password"+">password</option>"+
+    "<option value="+"text"+">text</option>"+
+    "<option value="+"color"+">color</option>"+
+    "</select>";
+
+    myApp.innerHTML = mySelectHtml;
+
+    }
+    
+
+}
+let mySelect = new Select("filtro");
+mySelect.render();

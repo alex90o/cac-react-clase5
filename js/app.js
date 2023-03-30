@@ -171,8 +171,8 @@ let myInput3 = new Input("inputs3", "password");
 
     render(){
     let myApp = document.getElementById(this.parentID);
-    const mySelectHtml = myApp.innerHTML +  "<select name="+"select>"+
-    "<option value="+"disnable"+ "selected>Selecione un opción</option>"+
+    const mySelectHtml = myApp.innerHTML +  "<select id="+"filtroSel>"+
+    "<option value="+"disnable"+   ">Selecione un opción</option>"+
     "<option value="+"checkbox"+">checkbox</option>"+
     "<option value="+"date"+">date</option>"+
     "<option value="+"password"+">password</option>"+
@@ -188,3 +188,83 @@ let myInput3 = new Input("inputs3", "password");
 }
 let mySelect = new Select("filtro");
 mySelect.render();
+let filtro = document.getElementById('filtroSel');
+let type = filtro.value;
+
+class Input2 {
+    constructor(parentID, type) {
+        this.parentID = parentID;
+        // if type != opciones validas... entonces poner un valor por default.
+        this.type = type;
+    }
+
+    render() {
+        let myApp = document.getElementById(this.parentID);
+
+        const myInputHTML = myApp.innerHTML + "<input type=" + this.type + ">";
+
+        myApp.innerHTML = myInputHTML; // VAmos a escribir el html para que se 
+
+    }
+}
+
+console.log(filtro.value);
+
+console.log(filtro);
+
+console.log(filtro.textContent)
+console.log(filtro.innerHTML)
+console.log(filtro.value);
+
+function Actualizar(){
+    let filtro = document.getElementById('filtroSel');
+    let type = filtro.value;
+}
+
+function RenderInput2(type) {
+    
+    let input_type = "none"
+
+    switch (type) {
+        case "checkbox":
+            input_type = "checkbox"
+            break;
+            case "date":
+                input_type = "date"
+                break;
+        case "password":
+            input_type = "password"
+            break;
+        case "text":
+            input_type = "text";
+            break;
+            case "color":
+                input_type = "color"
+                break;
+        default:
+            input_type = "text"
+            break;
+    }
+
+    let myInput = new Input("app-filter", input_type);
+    myInput.render();
+}
+
+// let myButon2 = new Button("selecion", "Actualizar");
+// myButon2.render();
+
+
+////// 
+// resolvemos el ejercicio del dia
+let inputArray = ["Username", "Surname", "E-mail", "Password"];
+
+let inputArrayFiltered = inputArray.filter( element => element=="Username");
+
+inputArrayFiltered.forEach(function (element) {
+    RenderInput2(element);
+});
+
+
+
+
+
